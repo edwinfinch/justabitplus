@@ -1,0 +1,30 @@
+{
+    "versionCode": 4,
+    "versionLabel": "0.3",
+    "appKeys": {
+        "theme": 0,
+        "showsec": 3,
+        "btrealert": 2,
+        "btdisalert": 1
+    },
+    "capabilities": [
+        "configurable"
+    ],
+    "uuid": "11b14c26-0e8a-4cb9-b26b-635596254199",
+    "resources": {
+        "media": [
+            {
+                "menuIcon": true,
+                "name": "IMAGE_MENU_ICON",
+                "type": "png",
+                "file": "images/menu_icon.png"
+            }
+        ]
+    },
+    "longName": "Just a Bit Plus",
+    "watchapp": {
+        "watchface": true
+    },
+    "companyName": "edwin",
+    "shortName": "Just a Bit+"
+}
