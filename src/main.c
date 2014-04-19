@@ -108,24 +108,19 @@ void process_tuple(Tuple *t)
 		  }
 	  	break;
   }
-	/*
 	if(versionChecked == 0){
 		APP_LOG(APP_LOG_LEVEL_INFO, "Latest watchapp version recieved, comparing...");
 		if(value > currentAppVer){
 			APP_LOG(APP_LOG_LEVEL_WARNING, "Watchapp version outdated");
-			settings.newVersion = 5;
-			newAppVer = value;
+			glance_this(6, 0, 0, 10000, 1);
 			versionChecked = 1;
 	    }
 		else if(value == currentAppVer){
 			APP_LOG(APP_LOG_LEVEL_INFO, "Watchapp version the same as API");
-			settings.newVersion = 4;
 			glance_this(5, 0, 0, 4000, 0);
-			warnedVersion = 1;
 			versionChecked = 1;
 	    }
 	}
-	*/
 }
 
 //When we get a message from the phone
@@ -353,24 +348,15 @@ void glance_this(int sentence, bool vibrate, int vibrateNum, int animationLength
 				text_layer_set_text(update_at_a_glance, "Watchface up to date :)");
 			}
 			else if(sentence == 6){
-				text_layer_set_text(update_at_a_glance, "Watchface version out of date (1 version behind current) Unload and load the watchface again from the store or MyPebbleFaces.");
-			}
-			else if(sentence == 7){
-				text_layer_set_text(update_at_a_glance, "Watchface version out of date (2 versions behind current) Unload and load the watchface again from the store or MyPebbleFaces.");
-			}
-			else if(sentence == 8){
-				text_layer_set_text(update_at_a_glance, "Watchface version out of date (3 versions behind current) Unload and load the watchface again from the store or MyPebbleFaces.");
-			}
-			else if(sentence == 9){
-				text_layer_set_text(update_at_a_glance, "Watchface version out of date (more than 3 versions behind current) Unload and load the watchface again from the store or MyPebbleFaces.");
+				text_layer_set_text(update_at_a_glance, "Watchface version out of date! Unload and load the watchface again from the appstore or MyPebbleFaces.");
 			}
 			currentlyGlancing = 1;
 				if(fullNotify == 1){
 					APP_LOG(APP_LOG_LEVEL_DEBUG, "Glance_this: Full notification");
 					text_layer_set_background_color(update_at_a_glance, GColorWhite);
 					GRect start01 = GRect(0, 300, 144, 168);
-					GRect finish01 = GRect(0, 50, 144, 168);
-					GRect start02 = GRect(0, 50, 144, 168);
+					GRect finish01 = GRect(0, 70, 144, 168);
+					GRect start02 = GRect(0, 70, 144, 168);
 					GRect finish02 = GRect(0, 300, 144, 168);
 					animate_layer(text_layer_get_layer(update_at_a_glance), &start01, &finish01, 1000, 0);
 					animate_layer(text_layer_get_layer(update_at_a_glance), &start02, &finish02, 1000, animationLength);

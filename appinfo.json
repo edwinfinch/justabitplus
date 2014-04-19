@@ -1,11 +1,12 @@
 {
-    "versionCode": 4,
-    "versionLabel": "0.3",
+    "versionCode": 5,
+    "versionLabel": "0.3.1",
     "appKeys": {
+        "btdisalert": 1,
         "theme": 0,
         "showsec": 3,
         "btrealert": 2,
-        "btdisalert": 1
+        "watchappver": 4
     },
     "capabilities": [
         "configurable"

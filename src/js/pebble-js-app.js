@@ -3,7 +3,6 @@ var fetchedVersion = 0;
 Pebble.addEventListener("ready",
                         function(e) {
                           console.log("connect!" + e.ready);
-                          //locationWatcher = window.navigator.geolocation.watchPosition(locationSuccess, locationError, locationOptions);
 						  fetchVersion();
                           console.log(e.type);
                         });
@@ -22,8 +21,8 @@ function fetchVersion() {
 	if(fetchedVersion == 0){
 		var response;
   var req = new XMLHttpRequest();
-  req.open('GET', "http://edwinfinch.github.io/configscreen-jab_plus", false);
-	console.log("Getting latest watchapp and javascript version from: http://edwinfinch.github.io/configscreen-jab_plus");
+  req.open('GET', "http://edwinfinch.github.io/justabitplus", false);
+	console.log("Getting latest watchapp and javascript version from: http://edwinfinch.github.io/justabitplus");
   req.onload = function(e) {
     if (req.readyState == 4) {
       if(req.status == 200) {

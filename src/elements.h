@@ -15,12 +15,15 @@ bool currentlyGlancing = 0;
 bool booted = 1;
 int animationNumber;
 bool bootedTime;
+int versionChecked = 0;
+int currentAppVer = 5;
 
 enum {
   	THEME_KEY = 0x0,
 	BTDISALERT_KEY = 0x1,
 	BTREALERT_KEY = 0x2,
 	SHOWSEC_KEY = 0x3,
+	WATCHAPPVER_KEY = 0x4,
 };
 
 typedef struct persist{
