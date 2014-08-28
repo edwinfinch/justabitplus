@@ -15,8 +15,6 @@ bool currentlyGlancing = 0;
 bool booted = 1;
 int animationNumber;
 bool bootedTime;
-int versionChecked = 0;
-int currentAppVer = 5;
 
 enum {
   	THEME_KEY = 0x0,

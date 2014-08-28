@@ -1,31 +1,32 @@
 {
-    "versionCode": 5,
-    "versionLabel": "0.3.1",
     "appKeys": {
         "btdisalert": 1,
-        "theme": 0,
-        "showsec": 3,
         "btrealert": 2,
+        "showsec": 3,
+        "theme": 0,
         "watchappver": 4
     },
     "capabilities": [
         "configurable"
     ],
-    "uuid": "11b14c26-0e8a-4cb9-b26b-635596254199",
+    "companyName": "edwin",
+    "longName": "Just a Bit Plus",
+    "projectType": "native",
     "resources": {
         "media": [
             {
+                "file": "images/menu_icon.png",
                 "menuIcon": true,
                 "name": "IMAGE_MENU_ICON",
-                "type": "png",
-                "file": "images/menu_icon.png"
+                "type": "png"
             }
         ]
     },
-    "longName": "Just a Bit Plus",
+    "shortName": "Just a Bit+",
+    "uuid": "11b14c26-0e8a-4cb9-b26b-635596254199",
+    "versionCode": 5,
+    "versionLabel": "0.4",
     "watchapp": {
         "watchface": true
-    },
-    "companyName": "edwin",
-    "shortName": "Just a Bit+"
+    }
 }

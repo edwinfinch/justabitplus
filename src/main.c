@@ -60,17 +60,14 @@ void process_tuple(Tuple *t)
 	//Get string value
 	char string_value[32];
 	strcpy(string_value, t->value->cstring);
-	APP_LOG(APP_LOG_LEVEL_DEBUG, "Extracting value");	
   switch (key) {
 	  case THEME_KEY:
-	  	APP_LOG(APP_LOG_LEVEL_WARNING, "lol");
 		  if(value == 5){
 			  layer_set_hidden(inverter_layer_get_layer(theme), false);
 			  settings.theme = 1;
 		  }
 		  else if(value == 4){
 			  layer_set_hidden(inverter_layer_get_layer(theme), true);
-			  APP_LOG(APP_LOG_LEVEL_WARNING, "Yep");
 			  settings.theme = 0;
 		  }
 	    glance_this(1, 1, 2, 5000, 0);
@@ -108,19 +105,6 @@ void process_tuple(Tuple *t)
 		  }
 	  	break;
   }
-	if(versionChecked == 0){
-		APP_LOG(APP_LOG_LEVEL_INFO, "Latest watchapp version recieved, comparing...");
-		if(value > currentAppVer){
-			APP_LOG(APP_LOG_LEVEL_WARNING, "Watchapp version outdated");
-			glance_this(6, 0, 0, 10000, 1);
-			versionChecked = 1;
-	    }
-		else if(value == currentAppVer){
-			APP_LOG(APP_LOG_LEVEL_INFO, "Watchapp version the same as API");
-			glance_this(5, 0, 0, 4000, 0);
-			versionChecked = 1;
-	    }
-	}
 }
 
 //When we get a message from the phone
@@ -302,7 +286,6 @@ void glanceTimerCallback(void *data){
 
 void glance_this(int sentence, bool vibrate, int vibrateNum, int animationLength, bool fullNotify){
 	//Update the text layer to the char provided by function call
-	APP_LOG(APP_LOG_LEVEL_INFO, "glance_this(); called");
 	if(currentlyGlancing == 1){
 		holdUpSentence = sentence;
 		holdUpVibrate = vibrate;
@@ -315,7 +298,6 @@ void glance_this(int sentence, bool vibrate, int vibrateNum, int animationLength
 	else if(currentlyGlancing == 0){
 			//if there's a vibration request,
 			if(vibrate == true){
-					APP_LOG(APP_LOG_LEVEL_DEBUG, "Glance_this: Vibration number %d", vibrateNum);
 					//check what number it is and fufill accordingly.
 					if(vibrateNum == 1){
 						vibes_short_pulse();
@@ -330,7 +312,6 @@ void glance_this(int sentence, bool vibrate, int vibrateNum, int animationLength
 				else{
 				//Incase of future need
 			    }
-			APP_LOG(APP_LOG_LEVEL_DEBUG, "Glance_this: Animating");
 			//Update text and animate update_at_a_glance layer for fancy effect
 			if(sentence == 1){
 				text_layer_set_text(update_at_a_glance, "Settings updated.");
@@ -343,12 +324,6 @@ void glance_this(int sentence, bool vibrate, int vibrateNum, int animationLength
 			}
 			else if(sentence == 4){
 				text_layer_set_text(update_at_a_glance, "Weather updated.");
-			}
-			else if(sentence == 5){
-				text_layer_set_text(update_at_a_glance, "Watchface up to date :)");
-			}
-			else if(sentence == 6){
-				text_layer_set_text(update_at_a_glance, "Watchface version out of date! Unload and load the watchface again from the appstore or MyPebbleFaces.");
 			}
 			currentlyGlancing = 1;
 				if(fullNotify == 1){
